@@ -10,7 +10,9 @@ RUN npm run build
 FROM nginx:stable-alpine as production-stage
 WORKDIR /app
 COPY default /etc/nginx/sites-enabled/default
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+RUN ls
+RUN pwd
+COPY --from=build-stage ./dist /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
