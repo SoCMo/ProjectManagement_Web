@@ -5,7 +5,6 @@ RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 RUN cnpm install
 COPY . .
 RUN npm run build
-RUN ls
 
 # production stage
 FROM nginx:stable-alpine as production-stage
