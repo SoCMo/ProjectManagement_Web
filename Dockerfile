@@ -1,5 +1,4 @@
 FROM node:8-slim as build-stage
-RUN apt-get update  && apt-get install -y nginx
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
