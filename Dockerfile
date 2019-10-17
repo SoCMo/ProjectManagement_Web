@@ -1,8 +1,7 @@
 FROM node:8-slim as build-stage
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
-RUN cnpm install
+RUN npm install
 COPY . .
 RUN npm run build
 
